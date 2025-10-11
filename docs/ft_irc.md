@@ -226,7 +226,7 @@ class Client {
     std::string _realname;
     std::string _hostname;
     ClientState _state;
-    std::set<std::string> _c⏳ (Planned)hannels;
+    std::set<std::string> _channels;
     bool _isOperator;
 };
 ```
