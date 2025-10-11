@@ -1,0 +1,52 @@
+# Compiled Object files
+*.o
+*.obj
+
+# Executables
+ircserv
+*.out
+*.exe
+
+# Compiled libraries
+*.a
+*.so
+*.dylib
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Dependency files
+*.d
+
+# Debug files
+*.dSYM/
+*.su
+
+# Test files (optional - uncomment if you don't want to track tests)
+# test_*
+# *_test
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+.cache/
+
+# Build directories (if using separate build folder)
+build/
+bin/
+obj/
+
+# Core dumps
+core
+core.*
+
+# Valgrind output
+vgcore.*
+*.valgrind
