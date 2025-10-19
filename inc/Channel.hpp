@@ -6,11 +6,13 @@
 /*   By: odana <odana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 20:41:55 by odana             #+#    #+#             */
-/*   Updated: 2025/10/19 20:42:34 by odana            ###   ########.fr       */
+/*   Updated: 2025/10/19 21:03:46 by odana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHANNEL_HPP
 # define CHANNEL_HPP
+
+// TODO @yitani
 
 #endif 

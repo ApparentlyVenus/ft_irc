@@ -6,7 +6,7 @@
 /*   By: odana <odana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 20:41:52 by odana             #+#    #+#             */
-/*   Updated: 2025/10/19 20:52:16 by odana            ###   ########.fr       */
+/*   Updated: 2025/10/19 21:08:22 by odana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 enum ClientState
 {
-    CONNECTING, // no data just connection
+    CONNECTING,     // no data just connection
     AUTHENTICATING, // password validated, need nick/user
-    REGISTERED // fully authenticated and can use commands
+    REGISTERED      // fully authenticated and can use commands
 };
 
 class Client
