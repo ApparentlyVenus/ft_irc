@@ -15,12 +15,4 @@
 
 // TODO @yitani
 
-/* FORMAT: PASS <password>
-** 
-** check if password registered -> already registered -> error 462
-** check if password provided -> no password parameter -> error 461
-** check password   --> correct: change client state from CONNECTING TO AUTHENTICATING
-**                  --> incorrect: do nothing (no error code)
-*/
-
 #endif
