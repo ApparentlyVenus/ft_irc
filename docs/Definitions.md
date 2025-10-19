@@ -91,11 +91,6 @@ EMFILE           // Too many open files
 ' '              // Space - parameter separator
 ```
 
-### Server Name
-```cpp
-"ircserv"        // Hardcoded server name (used in numeric replies)
-```
-
 ### Maximum Message Length
 ```cpp
 512              // Maximum IRC message length in bytes (IRC spec)
@@ -158,7 +153,7 @@ EMFILE           // Too many open files
 
 ---
 
-## File Descriptor Constants
+## File Descriptor And Signals
 
 ### Standard File Descriptors
 ```cpp
@@ -169,29 +164,10 @@ EMFILE           // Too many open files
 4+               // Client sockets
 ```
 
-### Invalid File Descriptor
-```cpp
--1               // Invalid file descriptor / error return value
-```
-
----
-
-## Signal Constants
-
 ### Signals Handled
 ```cpp
 SIGINT           // Interrupt signal (Ctrl+C)
 SIGTERM          // Termination signal
-```
-
----
-
-## C++ Standard Library Constants
-
-### string::npos
-```cpp
-std::string::npos    // Indicates "not found" in string operations
-                     // Largest possible size_t value
 ```
 
 ---
@@ -225,16 +201,6 @@ ntohl()          // Network TO Host Long
 
 ---
 
-## Format Specifiers (for debugging/output)
-
-### iomanip Constants
-```cpp
-std::setfill('0')    // Fill character for padding
-std::setw(3)         // Field width for numeric codes
-```
-
----
-
 ## System Limits (informational)
 
 ### Typical Values
@@ -243,75 +209,6 @@ std::setw(3)         // Field width for numeric codes
 4096             // Common ulimit increase for servers
 128              // Typical SOMAXCONN value
 ```
-
 ---
-
-## Magic Numbers Replaced with Named Constants
-
-### Should Define (best practice)
-```cpp
-// Instead of hardcoding these throughout:
-static const int BUFFER_SIZE = 4096;
-static const int MAX_MESSAGE_LENGTH = 512;
-static const std::string SERVER_NAME = "ircserv";
-static const std::string MESSAGE_TERMINATOR = "\r\n";
-```
-
----
-
-## Bit Operations for Poll Flags
-
-### Setting Flags
-```cpp
-events |= POLLOUT        // Add POLLOUT flag (bitwise OR)
-events &= ~POLLOUT       // Remove POLLOUT flag (bitwise AND with NOT)
-events & POLLIN          // Check if POLLIN is set (bitwise AND)
-events & (POLLHUP | POLLERR)  // Check if either flag is set
-```
-
----
-
-## Return Value Conventions
-
-### Success/Failure
-```cpp
-0                // Success (for most system calls)
--1               // Error (for most system calls)
-> 0              // Success with value (bytes read/written, ready fds)
-```
-
----
-
-## Summary by Component
-
-### NetworkManager Uses:
-- AF_INET, SOCK_STREAM
-- SO_REUSEADDR, O_NONBLOCK, SOMAXCONN
-- POLLIN, POLLOUT, POLLHUP, POLLERR
-- EAGAIN, EWOULDBLOCK, EINTR
-- Buffer size: 4096
-- Server socket: -1 (invalid initial value)
-
-### MessageProcessor Uses:
-- "\r\n" (message terminator)
-- ':' (prefix/trailing indicator)
-- ' ' (space separator)
-- "ircserv" (server name)
-- IRC numeric codes (001, 433, etc.)
-- std::string::npos
-
-### IRCServer Uses:
-- Port range: 1-65535
-- SIGINT, SIGTERM
-
----
-
-## Notes
-
-**These constants are:**
-- Defined by operating system (socket/poll constants)
-- Defined by IRC RFC specification (protocol constants)
-- Defined by C++ standard library (string::npos)
-- Best practice conventions (buffer sizes)
 
 **When in doubt:** Check man pages (`man 2 socket`, `man 2 poll`) or IRC RFC documents.
